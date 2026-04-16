@@ -34,10 +34,10 @@
         <div class="text-center py-8">
             <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-3 rounded-3xl border border-white/20 mb-6">
                 <span class="text-4xl">🍹</span>
-                <h1 class="title-font text-4xl font-bold tracking-tight">AI 专属调酒师</h1>
+                <h1 class="title-font text-4xl font-bold tracking-tight">今天喝什么好呢</h1>
             </div>
             <p class="text-xl text-purple-200">输入你的名字 + 今天心情 + 喜欢的风味</p>
-            <p class="text-purple-300 mt-2">AI 瞬间为你随机调一杯专属鸡尾酒！</p>
+            <p class="text-purple-300 mt-2">交给AI！</p>
         </div>
 
         <!-- 表单页面 -->
@@ -50,7 +50,7 @@
                 <input 
                     id="user-name"
                     type="text" 
-                    placeholder="输入你的名字（比如：小明）"
+                    placeholder="输入你的名字（比如：嘉颖）"
                     class="w-full bg-white/10 border border-white/30 focus:border-purple-400 rounded-2xl px-6 py-4 text-lg outline-none transition-all placeholder:text-purple-300">
             </div>
 
@@ -160,14 +160,14 @@
 
         // 心情选项
         const moods = [
-            { value: "快乐", emoji: "😊", label: "快乐" },
-            { value: "放松", emoji: "😌", label: "放松" },
-            { value: "兴奋", emoji: "🔥", label: "兴奋" },
-            { value: "浪漫", emoji: "❤️", label: "浪漫" },
-            { value: "疲惫", emoji: "😴", label: "疲惫" },
-            { value: "忧伤", emoji: "😢", label: "忧伤" },
-            { value: "冒险", emoji: "⚡", label: "冒险" },
-            { value: "迷茫", emoji: "😵‍💫", label: "迷茫" }
+            { value: "开森！", emoji: "😃", label: "开森！" },
+            { value: "很chill", emoji: "😌", label: "很chill" },
+            { value: "燃起来了", emoji: "🔥", label: "燃起来了" },
+            { value: "想念某人", emoji: "❤️", label: "想念某人" },
+            { value: "累累累", emoji: "😴", label: "累累累" },
+            { value: "小emo", emoji: "😢", label: "小emo" },
+            { value: "大脑宕机", emoji: "😨", label: "大脑宕机" },
+            { value: "淡淡的", emoji: "😳", label: "淡淡的" }
         ]
 
         // 风味选项
@@ -179,7 +179,7 @@
             { value: "果香", emoji: "🍓", label: "果香" },
             { value: "清新", emoji: "🌿", label: "清新" },
             { value: "热带", emoji: "🥥", label: "热带" },
-            { value: "咖啡", emoji: "☕", label: "咖啡" }
+            { value: "盲盒", emoji: "🗃️", label: "盲盒" }
         ]
 
         // 预设鸡尾酒数据库（AI"随机生成"的基础）
@@ -202,8 +202,8 @@
                     "装饰薄荷叶和青柠片"
                 ],
                 flavors: ["酸", "甜", "清新"],
-                moods: ["快乐", "放松"],
-                desc: "清新酸甜的薄荷香气瞬间唤醒你的快乐心情，像夏日海风一样自由。"
+                moods: ["开森！", "很chill"],
+                desc: "清新酸甜的薄荷香气瞬间唤醒你的开森！心情，像夏日海风一样自由。"
             },
             {
                 id: 2,
@@ -222,8 +222,8 @@
                     "过滤倒入杯中"
                 ],
                 flavors: ["酸", "甜"],
-                moods: ["兴奋", "快乐"],
-                desc: "酸甜平衡的经典之作，带着墨西哥阳光的热情，完美匹配你的兴奋时刻。"
+                moods: ["燃起来了", "开森！"],
+                desc: "酸甜平衡的经典之作，带着墨西哥阳光的热情，完美匹配你的燃起来了时刻。"
             },
             {
                 id: 3,
@@ -231,19 +231,19 @@
                 baseSpirit: "伏特加",
                 baseAmount: 45,
                 ingredients: [
-                    { name: "浓缩咖啡", amount: "30ml" },
-                    { name: "咖啡利口酒", amount: "20ml" },
+                    { name: "浓缩盲盒", amount: "30ml" },
+                    { name: "盲盒利口酒", amount: "20ml" },
                     { name: "糖浆", amount: "10ml" }
                 ],
                 steps: [
                     "摇晃器中加入所有材料和冰块",
                     "大力摇晃 15 秒",
                     "过滤倒入冰镇马天尼杯",
-                    "咖啡豆装饰"
+                    "盲盒豆装饰"
                 ],
-                flavors: ["苦", "甜", "咖啡"],
-                moods: ["兴奋", "疲惫"],
-                desc: "咖啡因 + 酒精的双重刺激，让疲惫的你瞬间重获能量，像深夜的灵感爆发。"
+                flavors: ["苦", "甜", "盲盒"],
+                moods: ["燃起来了", "累累累"],
+                desc: "盲盒因 + 酒精的双重刺激，让累累累的你瞬间重获能量，像深夜的灵感爆发。"
             },
             {
                 id: 4,
@@ -262,7 +262,7 @@
                     "菠萝角装饰"
                 ],
                 flavors: ["甜", "果香", "热带"],
-                moods: ["放松", "快乐"],
+                moods: ["很chill", "开森！"],
                 desc: "热带甜蜜的奶香包裹着你，像在沙滩上晒太阳一样慵懒又开心。"
             },
             {
@@ -282,7 +282,7 @@
                     "橙皮搓香后放入"
                 ],
                 flavors: ["苦", "甜"],
-                moods: ["放松", "忧伤"],
+                moods: ["很chill", "小emo"],
                 desc: "复古优雅的苦甜平衡，适合安静思考的夜晚，像老朋友的陪伴。"
             },
             {
@@ -301,8 +301,8 @@
                     "青柠片装饰"
                 ],
                 flavors: ["辣", "酸", "清新"],
-                moods: ["兴奋", "冒险"],
-                desc: "姜的微辣与酸爽碰撞，像一场刺激的冒险，瞬间点燃你的激情。"
+                moods: ["燃起来了", "大脑宕机"],
+                desc: "姜的微辣与酸爽碰撞，像一场刺激的大脑宕机，瞬间点燃你的激情。"
             },
             {
                 id: 7,
@@ -320,8 +320,8 @@
                     "青柠轮装饰"
                 ],
                 flavors: ["酸", "甜"],
-                moods: ["快乐"],
-                desc: "极致清爽的酸甜口感，像夏日冰镇果汁，专属于你的快乐时刻。"
+                moods: ["开森！"],
+                desc: "极致清爽的酸甜口感，像夏日冰镇果汁，专属于你的开森！时刻。"
             },
             {
                 id: 8,
@@ -340,8 +340,8 @@
                     "橙皮搓香装饰"
                 ],
                 flavors: ["苦", "甜"],
-                moods: ["放松"],
-                desc: "意大利经典苦甜调和，优雅而深沉，适合慢慢品味的放松时光。"
+                moods: ["很chill"],
+                desc: "意大利经典苦甜调和，优雅而深沉，适合慢慢品味的很chill时光。"
             },
             {
                 id: 9,
@@ -360,8 +360,8 @@
                     "橙皮装饰"
                 ],
                 flavors: ["酸", "果香", "甜"],
-                moods: ["浪漫", "快乐"],
-                desc: "粉红色的浪漫果香，像电影《欲望都市》里的优雅，专为你的甜蜜心情打造。"
+                moods: ["想念某人", "开森！"],
+                desc: "粉红色的想念某人果香，像电影《欲望都市》里的优雅，专为你的甜蜜心情打造。"
             },
             {
                 id: 10,
@@ -380,8 +380,8 @@
                     "柠檬皮装饰"
                 ],
                 flavors: ["酸", "甜"],
-                moods: ["疲惫", "放松"],
-                desc: "柔和的酸甜泡沫，温柔治愈你的疲惫，像一杯温暖的晚安酒。"
+                moods: ["累累累", "很chill"],
+                desc: "柔和的酸甜泡沫，温柔治愈你的累累累，像一杯温暖的晚安酒。"
             }
         ]
 
